@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:00:15 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/30 19:07:17 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:39:54 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 char    *get_next_line(int fd);
 int    ft_hasnull(char* str);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *s);
 
 #endif
