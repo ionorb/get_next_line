@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:00:15 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/30 18:34:18 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:07:17 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 # include <limits.h>
 
 char    *get_next_line(int fd);
-int    ft_hasnull(char* str)
+int    ft_hasnull(char* str);
 
 #endif

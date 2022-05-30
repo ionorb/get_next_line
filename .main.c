@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:03:17 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/26 16:03:27 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:10:05 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -25,5 +25,6 @@ int	main(int ac, char **av)
 		printf("[i]:\t%s\n", i, get_next_line(fd));
 		i++;
 	}
+    close(fd);
 	return (0);
 }
