@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:31 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/01 15:56:02 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/01 18:27:17 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ char	*get_next_line(int fd)
 
 	if (!save)
 		save = malloc(sizeof (char));
+	i = -1;
+	if (ft_hasnull(save))
+	{
+		while (save[i++])
+		{
+			if (save[i] == '\n')
+				save[i] = '\0';
+		}
+	}
+	printf("(save:%s)\n", save);
 	line = ft_strdup(save);
 	save[0] = '\0';
 	buf = malloc(BUFFER_SIZE * sizeof (char));
@@ -32,13 +42,10 @@ char	*get_next_line(int fd)
 		i = read(fd, buf, BUFFER_SIZE);
 		line = ft_strjoin(line, buf);
 	}
-	i = ft_strlen(line);
-	while (line[i] != '\n')
-		i--;
-	j = i + 1;
-	while (line[i++])
+	i = 0;
+	while (line[i] != '\n' && line[i++])
 		save = ft_jointhings(save, line[i]);
-	line[j] = '\0';
+	line[i + 1] = '\0';
 	returnline = ft_strdup(line);
 	free(line);
 	write(1, returnline, ft_strlen(returnline));
