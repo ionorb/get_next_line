@@ -5,24 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 16:00:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/30 19:45:48 by yridgway         ###   ########.fr       */
+/*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
+/*   Updated: 2022/06/01 15:54:29 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "get_next_line.h"
 
-int    ft_hasnull(char* str)
+int	ft_hasnull(char	*str)
 {
-    int    i;
-    
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] == '\n')
-            return (1);
-        i++;
-    }
-    return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 size_t	ft_strlen(const char *s)
@@ -76,4 +77,23 @@ char	*ft_strdup(const char *s)
 	}
 	p[i] = '\0';
 	return (p);
+}
+
+char	*ft_jointhings(char *str, char c)
+{
+	char	*new;
+	int		i;
+
+	i = 0;
+	new = malloc((ft_strlen(str) + 2) * sizeof (char));
+	if	(!str)
+		return (NULL);
+	while (str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i] = c;
+	new[i + 1] = '\0';
+	return (new);
 }

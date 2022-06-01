@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 16:03:17 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/30 19:46:46 by yridgway         ###   ########.fr       */
+/*   Created: 2022/06/01 14:39:58 by yridgway          #+#    #+#             */
+/*   Updated: 2022/06/01 14:40:02 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "get_next_line.h"
 
 int	main(int ac, char **av)
@@ -22,10 +23,9 @@ int	main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	while (i < atoi(av[2]))
 	{
-		printf("[%d]:\n", i);
-        get_next_line(fd);
+		get_next_line(fd);
 		i++;
 	}
-    close(fd);
+	close(fd);
 	return (0);
 }

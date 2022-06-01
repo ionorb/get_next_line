@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 16:00:15 by yridgway          #+#    #+#             */
-/*   Updated: 2022/05/30 19:39:54 by yridgway         ###   ########.fr       */
+/*   Created: 2022/06/01 14:40:20 by yridgway          #+#    #+#             */
+/*   Updated: 2022/06/01 15:54:01 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-char    *get_next_line(int fd);
-int    ft_hasnull(char* str);
+char	*get_next_line(int fd);
+int		ft_hasnull(char	*str);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
+char	*ft_jointhings(char *str, char c);
 
 #endif
