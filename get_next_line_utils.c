@@ -16,11 +16,13 @@ char	*ft_cutcopy(char *line, char *save)
 	int	i;
 
 	i = 0;
-	while (!ft_hasnull(line) && save[i])
+	while (save[i] != '\n' && save[i])
 	{
 		line[i] = save[i];
 		i++;
 	}
+	if (save[i] == '\n')
+		line[i] = save[i];
 	return (ft_strdup(save + i));
 }
 
