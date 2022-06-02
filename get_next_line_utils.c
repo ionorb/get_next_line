@@ -9,8 +9,30 @@
 /*   Updated: 2022/06/01 18:22:44 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "get_next_line.h"
+
+char	*ft_cutcopy(char *line, char *save)
+{
+	int	i;
+
+	i = 0;
+	while (save[i - 1] != '\n' && save[i])
+	{
+		line[i] = save[i];
+		i++;
+	}
+	return (ft_strdup(save + i));
+}
+
+char	*ft_makeline(char *save)
+{
+	int	i;
+
+	i = 0;
+	while (save[i - 1] != '\n' && save[i])
+		i++;
+	return ((char *)malloc((i + 1) * sizeof (char)));
+}
 
 int	ft_hasnull(char	*str)
 {

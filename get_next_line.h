@@ -25,6 +25,7 @@ int		ft_hasnull(char	*str);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
-char	*ft_jointhings(char *str, char c);
+char	*ft_cutcopy(char *line, char *save);
+char	*ft_makeline(char *save);
 
 #endif
