@@ -16,7 +16,7 @@ char	*ft_cutcopy(char *line, char *save)
 	int	i;
 
 	i = 0;
-	while (save[i - 1] != '\n' && save[i])
+	while (!ft_hasnull(line) && save[i])
 	{
 		line[i] = save[i];
 		i++;
@@ -29,7 +29,9 @@ char	*ft_makeline(char *save)
 	int	i;
 
 	i = 0;
-	while (save[i - 1] != '\n' && save[i])
+	while (save[i] != '\n' && save[i])
+		i++;
+	if (save[i] == '\n')
 		i++;
 	return ((char *)malloc((i + 1) * sizeof (char)));
 }
@@ -99,23 +101,4 @@ char	*ft_strdup(const char *s)
 	}
 	p[i] = '\0';
 	return (p);
-}
-
-char	*ft_jointhings(char *str, char c)
-{
-	char	*new;
-	int		i;
-
-	i = 0;
-	new = malloc((ft_strlen(str) + 2) * sizeof (char));
-	if	(!str)
-		return (NULL);
-	while (str[i])
-	{
-		new[i] = str[i];
-		i++;
-	}
-	new[i] = c;
-	new[i + 1] = '\0';
-	return (new);
 }
