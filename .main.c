@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:39:58 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/03 14:43:15 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/04 12:26:26 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(int ac, char **av)
 	int	i;
 
 	if (ac != 3)
+	{
+		printf("%s", get_next_line(3));
 		return (0);
+	}
 	i = 0;
 	fd = open(av[1], O_RDONLY);
 	while (i < atoi(av[2]))

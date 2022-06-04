@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/03 17:08:35 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/04 12:11:03 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -17,10 +17,12 @@ char	*ft_cutcopy(char *line, char *save)
 	char	*new;
 
 	i = 0;
-	if (!line)
-		return (save);
+//	if (!line)
+//		return (save);
+//	printf("<<line:%s>>", line);
 	while (save && !ft_hasnl(line) && save[i])
 	{
+//		printf("<<line:%s>>\n", line);
 		line[i] = save[i];
 		i++;
 	}
@@ -43,6 +45,11 @@ char	*ft_makeline(char *save)
 	new = (char *)malloc((i + 1) * sizeof (char));
 	if (!new)
 		return (NULL);
+	while (i >= 0)
+	{
+		new[i] = '\0';
+		i--;
+	}
 	return (new);
 }
 
@@ -53,6 +60,8 @@ int	ft_hasnl(char	*str)
 	i = 0;
 	if (!str)
 		return (0);
+//	write(1, "\nyeet\n", 6);
+//	write(1, &str[i], 1);
 	while (str && str[i])
 	{
 		if (str[i] == '\n')
@@ -77,12 +86,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*str;
 	size_t	j;
 	size_t	i;
-	size_t	k;
 
 	i = 0;
 	j = 0;
 	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof (char));
-	write(1, "\nyeet\n", 6);
 	if (!str)
 		return (NULL);
 	while (s1 && s1[i])
