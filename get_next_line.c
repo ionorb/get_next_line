@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:31 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/04 13:04:45 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/05 13:09:59 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@ char	*get_next_line(int fd)
 	char			*line;
 	int				i;
 
-/*	if (!save)
-	{
-		save = (char *)malloc(sizeof (char));
-		save[0] = '\0';
-	}
-	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof (char));
-	if (!buf)
-		return (NULL);*/
-//	if (!fd)
-//		return (NULL);
 	i = BUFFER_SIZE;
 	while (i >= 0)
 	{
@@ -40,18 +30,11 @@ char	*get_next_line(int fd)
 	{
 		i = read(fd, buf, BUFFER_SIZE);
 		buf[i] = '\0';
-//		printf("<buf:%s>", buf);
-//		printf("<buf[%d]:%c>", i, buf[i]);
 		save = ft_strjoin(save, buf);
-//		printf("<save:%s>", save);
-//		printf("{{buf:%s}}", buf);
 	}
+	if (save[0] == 0)
+		return (NULL);
 	line = ft_makeline(save);
 	save = ft_cutcopy(line, save);
-	if (ft_strlen(line) == 0)
-	{
-		free(line);
-		return (NULL);
-	}
 	return (line);
 }

@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/04 12:11:03 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/05 13:05:06 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -17,12 +17,8 @@ char	*ft_cutcopy(char *line, char *save)
 	char	*new;
 
 	i = 0;
-//	if (!line)
-//		return (save);
-//	printf("<<line:%s>>", line);
 	while (save && !ft_hasnl(line) && save[i])
 	{
-//		printf("<<line:%s>>\n", line);
 		line[i] = save[i];
 		i++;
 	}
@@ -60,8 +56,6 @@ int	ft_hasnl(char	*str)
 	i = 0;
 	if (!str)
 		return (0);
-//	write(1, "\nyeet\n", 6);
-//	write(1, &str[i], 1);
 	while (str && str[i])
 	{
 		if (str[i] == '\n')
