@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/05 13:05:06 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:41:41 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -17,7 +17,12 @@ char	*ft_cutcopy(char *line, char *save)
 	char	*new;
 
 	i = 0;
-	while (save && !ft_hasnl(line) && save[i])
+	while (save && save[i] != '\n' && save[i])
+	{
+		line[i] = save[i];
+		i++;
+	}
+	if (save[i] == '\n')
 	{
 		line[i] = save[i];
 		i++;
