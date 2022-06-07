@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:39:58 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/07 13:03:52 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:28:04 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int	main(int ac, char **av)
 {
 	int	fd;
 	int	i;
-	clock_t begin;
-	clock_t end = clock();
+	char *line;
+//	clock_t begin;
+//	clock_t end = clock();
 
 	if (ac != 3)
 	{
@@ -28,10 +29,12 @@ int	main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	while (i < atoi(av[2]))
 	{
-		begin = clock();
-		printf("%s", get_next_line(fd));
-		end = clock();
-		printf("\nTIME:%f\n", (double)(end - begin) / CLOCKS_PER_SEC);
+//		begin = clock();
+		line = get_next_line(fd);
+		printf("%s", line);
+		free(line);
+//		end = clock();
+//		printf("\nTIME:%f\n", (double)(end - begin) / CLOCKS_PER_SEC);
 		i++;
 	}
 	close(fd);

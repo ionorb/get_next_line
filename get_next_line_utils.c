@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/06 15:41:41 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:26:17 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -46,11 +46,6 @@ char	*ft_makeline(char *save)
 	new = (char *)malloc((i + 1) * sizeof (char));
 	if (!new)
 		return (NULL);
-	while (i >= 0)
-	{
-		new[i] = '\0';
-		i--;
-	}
 	return (new);
 }
 
