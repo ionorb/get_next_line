@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:20 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/06 15:24:01 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:54:37 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <time.h>
 
 char	*get_next_line(int fd);
 int		ft_hasnl(char	*str);

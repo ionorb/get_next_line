@@ -6,7 +6,7 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:31 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/06 15:57:39 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:10:40 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ char	*get_next_line(int fd)
 	char			*line;
 	int				i;
 
-	i = BUFFER_SIZE;
-	while (i >= 0)
-	{
-		buf[i] = '\0';
-		i--;
-	}
 	i = BUFFER_SIZE;
 	while (i == BUFFER_SIZE && !ft_hasnl(save))
 	{
