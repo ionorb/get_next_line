@@ -6,48 +6,10 @@
 /*   By: yridgway <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:40:08 by yridgway          #+#    #+#             */
-/*   Updated: 2022/06/07 14:26:17 by yridgway         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:31:15 by yridgway         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
-
-char	*ft_cutcopy(char *line, char *save)
-{
-	int		i;
-	char	*new;
-
-	i = 0;
-	while (save && save[i] != '\n' && save[i])
-	{
-		line[i] = save[i];
-		i++;
-	}
-	if (save[i] == '\n')
-	{
-		line[i] = save[i];
-		i++;
-	}
-	line[i] = '\0';
-	new = ft_strdup(save + i);
-	free(save);
-	return (new);
-}
-
-char	*ft_makeline(char *save)
-{
-	int		i;
-	char	*new;
-
-	i = 0;
-	while (save && save[i] != '\n' && save[i])
-		i++;
-	if (save[i] == '\n')
-		i++;
-	new = (char *)malloc((i + 1) * sizeof (char));
-	if (!new)
-		return (NULL);
-	return (new);
-}
 
 int	ft_hasnl(char	*str)
 {
@@ -83,6 +45,8 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
+	if (ft_strlen(s1) + ft_strlen(s2) == 0)
+		return (NULL);
 	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof (char));
 	if (!str)
 		return (NULL);
@@ -108,6 +72,8 @@ char	*ft_strdup(char *s)
 	size_t	i;
 
 	i = ft_strlen(s);
+	if (i == 0)
+		return (NULL);
 	p = malloc((i + 1) * sizeof (char));
 	if (!p)
 		return (NULL);
